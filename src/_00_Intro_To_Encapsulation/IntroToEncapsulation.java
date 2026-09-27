@@ -11,10 +11,13 @@ public class IntroToEncapsulation {
 		 */
 
 		// 1. Create a Vehicle object.
+		Vehicle vehicle = new Vehicle(); 
 
 		// 2. Use the vehicle's setters to change fuelTankCapacity and mpg.
-
+		vehicle.setFuelTankCapacity(10);
+		vehicle.setMpg(30); 
 		// 3. Call setFuelInTank with an amount greater than the capacity.
+		vehicle.setFuelInTank(30); 
 
 		// Note: The reason setFuelInTank doesn't show up is because it's private.
 
@@ -77,13 +80,17 @@ class Vehicle {
 		}
 	}
 
-	private void setFuelInTank(int fuelInTank) {
+	void setFuelInTank(int fuelInTank) {
 		if (fuelInTank >= 0 && fuelInTank <= fuelTankCapacity) {
 			this.fuelInTank = fuelInTank;
 		} else {
 			System.out.println("Invalid amount of fuel. Tank set to full.");
 			this.fuelInTank = fuelTankCapacity;
 		}
+	}
+	
+	void setColor() {
+		
 	}
 
 	// A getter returns a member variable.
