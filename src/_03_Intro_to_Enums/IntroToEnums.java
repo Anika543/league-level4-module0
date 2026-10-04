@@ -27,11 +27,18 @@ public class IntroToEnums {
 
 		// 3. Create an array of StatesOfMatter with all the values using .values().
 		// Hint: Use "StatesOfMatter." as if it were a static method.
+		StatesOfMatter states[] = StatesOfMatter.values(); 
 
 		// 4. Ask the user for a state of matter.
+		String input = JOptionPane.showInputDialog("Name a state of Matter", null); 
 
 		// 5. Iterate through the array and find what the user entered.
 		// Hint: .name() or .toString
+		for(int i = 0; i<states.length; i++) {
+			if(states[i].name().equalsIgnoreCase(input)) {
+				System.out.println(states[i].getCelsiusTemp()); 
+			}
+		}
 
 		// 6. Print outs its ordinal(order in the enum list)
 		// Hint: .ordinal()
@@ -58,11 +65,23 @@ public class IntroToEnums {
 		// Hint: Return the conversion: F = (C * 9/5) + 32
 
 		// 10. Create a variable of the StatesOfMatter type and initialize it randomly.
-
+		StatesOfMatter state = StatesOfMatter.SOLID;
 		// 11. Print outs both of its temperatures.
+		System.out.println(state.convertToFahrenheit() + " " + state.getCelsiusTemp());
 		
 		// 11. Create a switch statement that switches on the variable you created.
 		// Note: When creating the cases, you can omit the "StatesOfMatter."
+		switch(state) {
+		case SOLID:
+			System.out.println("sushi");
+			break; 
+		case LIQUID:
+			System.out.println("lemonade");
+			break;
+		case GAS:
+			System.out.println("air");
+			break;
+		}
 
 		// 12. For each case, print your favorite food or drink that uses that state.
 		// e.g. Gas/Boiling for Pasta, Solid/Ice for Popsicles, Liquid for Soda
